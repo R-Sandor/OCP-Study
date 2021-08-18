@@ -1,0 +1,61 @@
+%file: chapter1.tex
+\documentclass[12pt]{article}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{listings} %code extracts
+\usepackage{xcolor} %custom colors
+\usepackage{mdframed} %nice frames
+\usepackage{lmodern}
+\usepackage{tikz}
+
+\definecolor{light-gray}{gray}{0.95} %the shade of grey that stack exchange uses
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\begin{document}
+\title {Chapter 1 OCP Notes}
+\author {Raphael J. Sandor}
+\maketitle
+\subsection*{Java Class Design}
+\begin{itemize} 	
+	\item Implement inheritance including visibility modifier and composition. \checkmark
+	\item Implement polymorphism. \checkmark
+	\item Override hashCode, equals, and toString methods from Object class. \checkmark
+	\item Develop code that uses the static keyword on initialize blocks, variables, and classes. \checkmark
+\end{itemize}
+
+\subsection*{Advanced Java Class Design }
+\begin{itemize} 	
+	\item Develop code that uses abstract classes and methods.  \checkmark
+	\item Develop code that uses final keyword. \checkmark
+	\item Create inner classes including static inner class, local class, nested class, and annonymous inner class.  \checkmark
+	\item Use enumerated types including methods and constructors in an enum type. \checkmark
+	\item Develop code that declares, implements, and/or extends interface and uses the @Override annotation. \checkmark
+\end{itemize}
+
+\section*{Notes}
+
+%
+%\begin{table}[ht]
+%\caption{Common Functional Interfaces}	% title of Table
+%\centering											% used for centering table
+%\begin{tabular}{llll}							% centered columns (4 columns)
+%\hline\hline										%inserts double horizontal lines
+%Functional Interfaces & \#Parameters & Return type & Single Abstract Method \\ [.5ex]
+%heading
+%\hline																% inserts single horizontal line
+%Supplier<T>			& 0			& T			& get	  	\\			% inserting body of the table 
+%Consumer<T>			& 1 (T) 	& void		& accept  	\\ [1ex]	% [1ex] adds vertical space
+%BiConsumer<T>		& 2 (T, U) 	& void		& accept	\\
+%Predicate<T>		& 1 (T)		& boolean	& test		\\
+%BiPredicate<T, U>	& 2 (T, U)	& boolean	& test		\\
+%Function<T, R>		& 1 (T)		& R			& apply		\\
+%BiFunction<T, U, R> & 2 (T, U)	& R			& apply		\\
+%UnaryOperator<T>	& 1 (T)		& T			& apply		\\
+%BinaryOperator<T>	& 2 (T, T)	& T			& apply		\\
+%\hline																% inserts single line
+%\end{tabular}	
+%\label{table:nonlin}												% is used to refer this table in the text
+%\end{table}
+
+
+\end{document}
