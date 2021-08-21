@@ -36,11 +36,12 @@
 
 \section*{Notes}
 
+\section{Access Modifiers}
 
-\begin{table}
+\begin{table}[h]																				% placement parameter.
 \setlength\extrarowheight{2pt} 
 \caption{Access Modifiers}	% title of Table
-\centering																							% used for centering table
+\centering																						% used for centering table.
 \begin{tabularx}{\textwidth}{*{5}{Z}}
 \toprule
 %\multicolumn{5}{c}{xxx xx xxxx}  \\
@@ -59,10 +60,39 @@ Member in a superclass in a different package	& No 	& No	& Yes	& Yes		\\
 \midrule
 Method/field in a class (that is not a superclass) in a different package
 												& No	& No	& No	& Yes		\\
-\hline																							% inserts single line
 \end{tabularx}	
-\label{table:nonlin}																			% is used to refer this table in the text
+\label{table:nonlin}																			
 \end{table}
+
+\section{Overloading and Overriding}
+
+\subsection{Overloading}
+When multiple overloaded methods are present, Java looks for the closet match first. It tries to find the following:
+\begin{itemize}
+  \item Exact match by type
+  \item Matching a superclass
+  \item Converting to larger primitive type
+  \item Converting to an autoboxed type
+  \item Varargs
+\end{itemize}
+
+\subsection{Overriding}
+For overriding, the overriden method has few rules:
+
+\begin{itemize}
+  \item The access modifier must be the same or more accessible
+  \item The return type must be the same same or more restrictive type, \\
+   also known as \textit{covariant} return types.
+  \item If any checked exceptions are thrown, only the same exceptions or subclass of those \\
+   exceptions are allowed to be thrown.
+ \end{itemize}
+
+
+\subsection{OCA Concepts Notes} 
+\begin{itemize}
+  \item instanceOf will not compile for Objects that share no inheritance, exception this is of course interfaces and null.
+    \subitem Reason for this is any object could be set null, and any class could at some point implement a given interface.
+\end{itemize}
 
 
 \end{document}
