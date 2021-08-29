@@ -97,14 +97,11 @@ For overriding, the overriden method has few rules:
   \item toString() - Returns a \textbf{String} object, takes \textbf{no parameters}.
 \end{itemize}
 
-\subsection* {Order of initialization} 
-\begin{itemize}
-  \item Superclass
-  \item Static variable delcarations and static initializers in the order they appear in the file.
-  \item Instance variable declarations and instance initializers in the order they appear in the file.
-  \item The constructor
-\end{itemize}
 
+%%%
+% Working notes for now.
+Java will look for the most specific match in terms of properties files, and will look for a Name_lang_CTRY.java then a properties file.
+For example Dolphins_en_US.java and Dolphins_en_US.properties
 
 
 \end{document}
