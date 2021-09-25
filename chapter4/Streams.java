@@ -3,6 +3,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.function.Predicate;
 import java.util.Optional;
+import java.util.Arrays;
+import java.util.List;
 
 public class Streams {
     public static void main(String args[]) {
@@ -29,11 +31,13 @@ public class Streams {
 		// This line will throw a null pointer exception. 
 		// magic(Stream.of(5,10));
 		magic(Stream.of(3,0));
+
     }
 
 	private static void magic(Stream<Integer> s) {
 		Optional o = s.filter(x -> x < 5).limit(3).max((x, y) -> x-y);
 		System.out.println(o.get());
+
 	}
 
 }

@@ -60,9 +60,16 @@ public class MyPaths {
 		// DON'T DO THIS. isSameFile() method uses Files as a helper.
 		// System.out.println(p1.isSameFile(p2)); 
 		// This can throw an IOException that must be caught.
+		
+		System.out.print("Relative Path to an abosolute path:");
+		System.out.println("rabits/myPaths/../Cool");
+		Path relativeToAbsolute = Paths.get("rabits/myPaths/../Cool").toAbsolutePath();
+		System.out.println(relativeToAbsolute);
 
 		try {
+			System.out.println();
 			System.out.println("finally is the original P1 and P2 same file:\t" + Files.isSameFile(p1, p2));
+			System.out.println("NOTE: This had to be placed in a try catch because it can throw IOException and SecurityException");
 		
 		} catch(IOException e) {
 			System.out.println(e);
