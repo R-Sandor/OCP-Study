@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.stream.DoubleStream;
 
 class Product {
 
@@ -52,6 +52,11 @@ public class Streams2 {
 		codes.forEach(c -> System.out.println(c));
 		
 		*/
+
+		IntStream str = IntStream.of(1, 2, 3, 4);
+		Double d = str.average().getAsDouble();
+		System.out.println("Average = " + d);
+
 	}
 }
 
