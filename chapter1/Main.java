@@ -29,7 +29,6 @@ public class Main {
 
         kaito.doTrick("Meow");
         System.out.println(kaito instanceof BigCat);
-
     }
 
 

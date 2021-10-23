@@ -66,6 +66,7 @@ public class MyPaths {
 		Path relativeToAbsolute = Paths.get("rabits/myPaths/../Cool").toAbsolutePath();
 		System.out.println(relativeToAbsolute);
 
+
 		try {
 			System.out.println();
 			System.out.println("finally is the original P1 and P2 same file:\t" + Files.isSameFile(p1, p2));
