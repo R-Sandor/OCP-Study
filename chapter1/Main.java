@@ -28,7 +28,10 @@ public class Main {
 		System.out.println(kaito instanceof Claws);
 
         kaito.doTrick("Meow");
-        System.out.println(kaito instanceof BigCat);
+        //System.out.println(kaito instanceof BigCat);
+
+		int data[] = {1,2,3};
+		System.out.println(data.length);
     }
 
 
