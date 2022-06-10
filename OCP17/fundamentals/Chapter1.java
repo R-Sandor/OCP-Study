@@ -9,4 +9,6 @@ public class Chapter1 {
 		 @see <a href="https://introcs.cs.princeton.edu/java/11precedence/">Precedence</a>
 		*/
 	}
+		// Underscores are not allowed to be used as a variable. They are a keyword.
+		// int Var() { var _ = 7; return _;}
 }
