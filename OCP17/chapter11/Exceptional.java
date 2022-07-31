@@ -1,10 +1,11 @@
 // Default Exception Handler
 public class Exceptional {
  
-	// If even main method don't handled exception, It will be handover to 'Default
-	// Exception Handler'
+	// Even if main method doesn't handle a exception, 
+	// it will be handover to 'Default Exception Handler'
 	public static void main(String[] args) {
-		method1();
+	  Object x = null;
+	  x.toString();
 	}
  
 	static void method1() {
