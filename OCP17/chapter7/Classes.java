@@ -3,6 +3,9 @@ public class Classes {
 		public abstract void InnerAbstract();
 	}
 
+	public static abstract class SecondClass {
+	}
+
 	public static void main(String[] args){
 		InnerStatic myAbstract = new InnerStatic() {
 			public void InnerAbstract() {
@@ -10,6 +13,10 @@ public class Classes {
 			};
 		};
 		myAbstract.InnerAbstract();
+		innerStatic(new SecondClass(){});	
 	}
 
+	public static void innerStatic(SecondClass is) {
+		System.out.println("inner static class");
+	}
 }
