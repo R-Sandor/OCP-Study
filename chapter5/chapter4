@@ -1,0 +1,107 @@
+%file: chapter1.tex
+\documentclass[12pt]{article}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{listings} %code extracts
+\usepackage{xcolor} %custom colors
+\usepackage{mdframed} %nice frames
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{tabularx, ragged2e, booktabs}
+\usepackage{makecell}
+\newcolumntype{Z}{ >{\centering\arraybackslash}X }
+\definecolor{light-gray}{gray}{0.95} %the shade of grey that stack exchange uses
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\begin{document}
+\title {Chapter 1 OCP Notes}
+\author {Raphael J. Sandor}
+\maketitle
+\subsection*{Java Class Design}
+\begin{itemize} 	
+	\item Implement inheritance including visibility modifier and composition. \checkmark
+	\item Implement polymorphism. \checkmark
+	\item Override hashCode, equals, and toString methods from Object class. \checkmark
+	\item Develop code that uses the static keyword on initialize blocks, variables, and classes. \checkmark
+\end{itemize}
+
+\subsection*{Advanced Java Class Design }
+\begin{itemize} 	
+	\item Develop code that uses abstract classes and methods.  \checkmark
+	\item Develop code that uses final keyword. \checkmark
+	\item Create inner classes including static inner class, local class, nested class, and anonymous inner class.  \checkmark
+	\item Use enumerated types including methods and constructors in an enum type. \checkmark
+	\item Develop code that declares, implements, and/or extends interface and uses the @Override annotation. \checkmark
+\end{itemize}
+
+\section*{Notes}
+
+\section{Access Modifiers}
+
+\begin{table}[h]																				% placement parameter.
+\setlength\extrarowheight{2pt} 
+\caption{Access Modifiers}	% title of Table
+\centering																						% used for centering table.
+\begin{tabularx}{\textwidth}{*{5}{Z}}
+\toprule
+%\multicolumn{5}{c}{xxx xx xxxx}  \\
+\thead{Can access}  
+& \thead{Member \\ is private} 
+& \thead{Member \\ has Default \\ (package \\ private)\\ access} 
+& \thead{Member \\ is protected} 
+& \thead{Member \\ is public}  \\ 
+%heading
+\hline																							% inserts single horizontal line
+Member in the same class 						& Yes	& Yes	& Yes	& Yes		\\			% inserting body of the table 
+\midrule
+Member in another class in the same package		& No	& Yes	& Yes	& Yes		\\ [1ex]	% [1ex] adds vertical space
+\midrule
+Member in a superclass in a different package	& No 	& No	& Yes	& Yes		\\
+\midrule
+Method/field in a class (that is not a superclass) in a different package
+												& No	& No	& No	& Yes		\\
+\end{tabularx}	
+\label{table:nonlin}																			
+\end{table}
+
+\section{Overloading and Overriding}
+
+\subsection{Overloading}
+When multiple overloaded methods are present, Java looks for the closet match first. It tries to find the following:
+\begin{itemize}
+  \item Exact match by type
+  \item Matching a superclass
+  \item Converting to larger primitive type
+  \item Converting to an autoboxed type
+  \item Varargs
+\end{itemize}
+
+\subsection{Overriding}
+For overriding, the overriden method has few rules:
+
+\begin{itemize}
+  \item The access modifier must be the same or more accessible
+  \item The return type must be the same same or more restrictive type, \\
+   also known as \textit{covariant} return types.
+  \item If any checked exceptions are thrown, only the same exceptions or subclass of those \\
+   exceptions are allowed to be thrown.
+ \end{itemize}
+
+
+\subsection{OCA Concepts Notes} 
+\begin{itemize}
+  \item instanceOf will not compile for Objects that share no inheritance, exception this is of course interfaces and null.
+    \subitem Reason for this is any object could be set null, and any class could at some point implement a given interface.
+  \item equals() - Returns \textbf{boolean}, takes a single \textbf{Object obj} as a parameter.
+  \item hashCode() - Returns \textbf{int}, takes \textbf{no parameters}.
+  \item toString() - Returns a \textbf{String} object, takes \textbf{no parameters}.
+\end{itemize}
+
+
+%%%
+% Working notes for now.
+Java will look for the most specific match in terms of properties files, and will look for a Name_lang_CTRY.java then a properties file.
+For example Dolphins_en_US.java and Dolphins_en_US.properties
+
+
+\end{document}

@@ -1,0 +1,163 @@
+%file: chapter4.tex
+\documentclass[12pt]{article}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{listings} %code extracts
+\usepackage{xcolor} %custom colors
+\usepackage{mdframed} %nice frames
+\usepackage{lmodern}
+\usepackage{tikz}
+
+\definecolor{light-gray}{gray}{0.95} %the shade of grey that stack exchange uses
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\begin{document}
+\title {Chapter 4 OCP Notes}
+\author {Raphael J. Sandor}
+\maketitle
+\subsection*{Generics and collections:}
+\begin{itemize} 	
+	\item Collection Streams and Filters. %\checkmark
+	\item Iterate using forEach methods of Streams and List. %\checkmark
+	\item Describe Stream interface and Stream pipeline. %\checkmark
+	\item Use method references. \checkmark
+\end{itemize}
+
+\subsection*{Lambda Built-in Functional Interfaces:}
+\begin{itemize} 	
+	\item Use built-in interfaces included in the java.util.functional package
+		  such as Predicate, Consumer, Function, and Supplier. \checkmark
+	\item Develop code that uses primitive versions of functional interfaces. \checkmark
+	\item Develop code that uses binary versions of functional interfaces. \checkmark
+	\item Develop code that uses the UnaryOperator interface. \checkmark
+\end{itemize}
+
+\subsection*{Java Stream API:}
+\begin{itemize} 	
+		\item Develop code to extract data from an object using peek();
+			and map() methods including primitive versions of the map() method. %\checkmark
+		\item Search for data by using search methods of the Stream classes including 
+			  findFirst, findAny, anyMatch, allMatch, and noneMatch.%\checkmark
+		\item Develop code that uses Stream data methods and calculation methods.
+		\item Sort a collection using Stream API. %\checkmark
+		\item Save results to a collection using the collect method and group/partition/data using the Collectors class. %\checkmark
+		\item Use of merge() and flatMap() methods of the Stream API. %\checkmark
+\end{itemize}
+
+\
+\section*{Notes}
+
+
+\section{Effectively Final}
+If a local variable can have final put in the declaration and still compile, it is said to be effectively final.
+\subsection{Using variables in Lambdas } 
+Lambda expressions can access 
+\begin{itemize}
+	\item Static variables
+	\item Instance variables
+	\item Effectively final method parameters
+	\item Effectively final local parameters
+\end{itemize}
+Lambdas can not access private variables in another class. 
+\\Lambdas can access a subset of variables that are accessible, but never more than that.
+\clearpage
+
+\section{Working with Built in Function Interfaces } 
+java.util.function.package
+\\
+
+\begin{table}[ht]
+\caption{Common Functional Interfaces}	% title of Table
+%\centering											% used for centering table
+\begin{tabular}{llll}							% centered columns (4 columns)
+\hline\hline										%inserts double horizontal lines
+Functional Interfaces & \#Parameters & Return type & Single Abstract Method \\ [.5ex]
+%heading
+\hline																% inserts single horizontal line
+Supplier<T>			& 0			& T			& get	  	\\			% inserting body of the table 
+Consumer<T>			& 1 (T) 	& void		& accept  	\\ [1ex]	% [1ex] adds vertical space
+BiConsumer<T>		& 2 (T, U) 	& void		& accept	\\
+Predicate<T>		& 1 (T)		& boolean	& test		\\
+BiPredicate<T, U>	& 2 (T, U)	& boolean	& test		\\
+Function<T, R>		& 1 (T)		& R			& apply		\\
+BiFunction<T, U, R> & 2 (T, U)	& R			& apply		\\
+UnaryOperator<T>	& 1 (T)		& T			& apply		\\
+BinaryOperator<T>	& 2 (T, T)	& T			& apply		\\
+\hline																% inserts single line
+\end{tabular}	
+\label{table:nonlin}												% is used to refer this table in the text
+\end{table}
+
+\subsection{Implementing Supplier} 
+Used to generate or supply value with taking any inputs.
+
+
+\begin{mdframed}[backgroundcolor=light-gray, roundcorner=10pt,leftmargin=1, rightmargin=1, innerleftmargin=15, innertopmargin=15,innerbottommargin=15, outerlinewidth=1, linecolor=light-gray]
+\begin{lstlisting}
+Supplier<LocalDate> s1 = localDate::now;
+Supplier<LocalDate> 21 = localDate.now();
+
+// Static method reference
+LocalDate::now; 
+
+\end{lstlisting}
+\end{mdframed} 
+
+\subsection {Consumer and BiConsumer }
+\begin{mdframed}[backgroundcolor=light-gray, roundcorner=10pt,leftmargin=1, rightmargin=1, innerleftmargin=15, innertopmargin=15,innerbottommargin=15, outerlinewidth=1, linecolor=light-gray]
+\begin{lstlisting}
+@Functional Interface public class Consumer<T>{
+	void accept(T t);
+}
+
+Consumer<String> c1 = System.out::println;
+Consumer<String> c2 = x -> System.out::println();
+
+BiConsumer<String, Integer> c3 = map.put(k,v);
+BiConsumer<String, Integer> c4 = map::put;
+\end{lstlisting}
+\end{mdframed} 
+
+Consumers take a parameter and return nothing. Thus a consumer of println works. 
+c1.accept("annie");
+
+\subsection{Implementing Predicate and BiPredicate}
+Predicate is often used when filter or matching. Both are common operations.
+
+Interesting to note that when a method reference is used on something such as a particular string the following can be used:
+\\
+\\ \textit{Method reference}
+\\ Predicate<String> p1 = String::isEmpty;
+\\
+\\ \textit{Without the method reference (lambda expression)}
+\\ Predicate<String> p2 = x-> x.isEmpty();
+
+\subsection{Implementing Function and BiFunction}
+A Function is responsible for turning one parameter into a value of a potentially different type and returning it.
+Similarly, a BiFunction is responsible for turning two turning two parameters into a value and returning it.
+\begin{mdframed}[backgroundcolor=light-gray, roundcorner=10pt,leftmargin=1, rightmargin=1, innerleftmargin=15, innertopmargin=15,innerbottommargin=15, outerlinewidth=1, linecolor=light-gray]
+\begin{lstlisting}
+@FunctionalInterface public class Function<T,R> {
+	R apply(T t);
+}
+@FunctionalInterface public class BiFunction<T,U,R> {
+	R apply(T t, U u);
+}
+\end{lstlisting}
+\end{mdframed} 
+R is the return type from the function. \\
+
+A another thing to remember about functions is that UnaryOperator and BinaryOperator both inherit function.
+Memorize table 4.1 but it is also easy to remember that all the classes that inherit from Function take apply. 
+Consumer uses accept, Predicate test, and Supplier get. \\
+UnaryOperator and BinaryOperator require the type to be the same hence why R does not need to be provided. \textbf{Think types} when working with Functions.
+
+\section{ Returning an Option }
+Optional is useful for checking if a value exist. If one does not exist use Optional.empty();
+If an optional does exist then to get the value use opt.get(), and to check first use opt.isPresent();
+To return an Optional use Optional.of(...);
+
+% Important note partionBy() always returns a map with two keys while 
+% group by only returns one if one is needed.
+
+\end{document}

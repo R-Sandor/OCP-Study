@@ -1,0 +1,23 @@
+ 1) D 			  -- The iterate is fine, create an infinite interface
+ 					 (think of it that way) 
+ 2) F 
+ 3) B X			  -- Exception is thrown. Streams can only be operated on once.
+ 4) A, B
+ 5) A, B, (F - X) -- F is only available on IntStreams so it is 					 not reduction of the Stream Class.
+ 6) A 
+ 7) F 
+ 8) D, E X 		  -- Sum returns 0 if there are not an elements
+ 					 Average returns OptionalDouble.
+ 9) B, D
+10) B
+11) B, C, E X	  -- Remember that Collectors returns a single 
+					 type from a Stream
+12) F, A, G
+13) F
+14) G X 
+15) D,E
+16) D X
+17) E
+18) D
+19) A, C,,E (D X)
+20) B
