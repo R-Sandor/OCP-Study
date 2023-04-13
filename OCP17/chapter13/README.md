@@ -4,4 +4,6 @@
 - run() can be called many times with a thread while start() can only be called once.
   - Note: run() acts like a normal method, and it does not start a new thread.
 - Calling Shutdown() causes any new jobs submitted to throw RejectExececutionException.
+### Submitting Tasks
+- calling submit(Runnable task) returns a Future<V> that is null because the return type of the method is void.
 
