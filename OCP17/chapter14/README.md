@@ -19,3 +19,10 @@
 - For an object to be serializable the class must implement Serializable (java.io.Serializable)
 - instance members must implement serializable, marked transient, or null.
 ### _Note:_ This doesn't affect compilation. The third rule if violated will still compile.
+
+## Performing a Parallel Reduction on a Collector
+### Requirements to perform a parallel reduction: 
+- The stream is parallel. 
+- The parameter of the collect() operation has the Characteristics.UNORDERED
+- Either the steam is unordered or the collector has the characteristic Characteristics.UNORDERED.
+
