@@ -1,3 +1,6 @@
+//import java.util.List;
+import static java.util.List.of;
+import static java.lang.Math.sqrt;
 
 public class Immutable {
 	final String name;
