@@ -7,3 +7,7 @@ For example a function that does not throw a IOException can not catch one.
 
 ## Closable vs AutoCloseable 
 - Closeable can through an exception while autoclosable can not. 
+
+## Exception Class 
+- The exception class has multiple constructors, one that takes a string, a Throwable, and no-args.
+
