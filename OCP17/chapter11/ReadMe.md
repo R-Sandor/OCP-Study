@@ -4,3 +4,6 @@ A often forgotten piece about programmer added _finally_ is that if _finally_ th
 ## Catch
 Important that catch can only declare exceptions that need to be handled or declared. 
 For example a function that does not throw a IOException can not catch one. 
+
+## Closable vs AutoCloseable 
+- Closeable can through an exception while autoclosable can not. 
