@@ -13,7 +13,8 @@ public class Finally {
 		  throw new RuntimeException("Something bad happend");
 		} catch (IllegalStateException e) {
 			System.out.println(e);
-		} finally {
+		} catch (RuntimeException r) { } 
+    finally {
       System.out.println("Finally Swallows the exception");
 		  //return 0; // Comment out to see execption. 
 		}
