@@ -13,4 +13,5 @@ https://stackoverflow.com/questions/663059/why-do-inner-classes-make-private-met
 
 And following from that, since both inner classes are really just part of the containing class, they should be able to access each others private members as well.
 ```
-
+## Scope
+- Access to variables is not just determined by the classes themselves. For Example in Enclosing.Java the OutOfScope Object is created inside of the of the Enclosing class. And because of this the OutOfScope Object can access the private variables of the nested class, when it is call in its val() method, the object does not compile.
