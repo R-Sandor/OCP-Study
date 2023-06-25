@@ -8,3 +8,7 @@ Any calls to other constructors must set that field.
 
 ### Super class constructor
 - Only the immediate superclasses constructor is available with super(); Meaning if the parent class extends a class those constructors that are not overriden in the parent class are not available to the child. 
+
+
+### instanceOf 
+- When instance of is applied to a null it always evaluates to false!!!
