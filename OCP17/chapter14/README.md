@@ -26,3 +26,5 @@
 - The parameter of the collect() operation has the Characteristics.UNORDERED
 - Either the steam is unordered or the collector has the characteristic Characteristics.UNORDERED.
 
+## Move()
+- Important note above is the full destination needs to be provided for move to put a file in a directory. 
