@@ -24,3 +24,5 @@ The reason is that Java returns a long. Which makes sense if one considers that 
 - long to byte, short, char or int
 - float to byte, short, char, int or long
 - double to byte, short, char, int, long or float.
+
+## When working numeric primitives always pay close attention to the return types, especially when working with functionalProgramming where types are inferred by the data.
