@@ -28,3 +28,6 @@ To synchronize access across mutlpile threads, each thread much have access to t
 ### forEach()
 - Remember that parallel opperations still occur on a forEach for parallel streams. 
  - This is important for when the opperations in which the threads are operating are not thread safe. 
+
+## CurrentModificationExceptions
+- Concurrent classes read/write access such that access to the class is consistent accross all threads and process, while synchronized classes do not and will throw CurrentModificationException on read & write. 
