@@ -19,3 +19,12 @@ To synchronize access across mutlpile threads, each thread much have access to t
 
 ## Runnable interface 
 - Must implement the run() method.
+
+## Interupt on a thread. 
+- Calling Interupt on a thread has no effect because they don't go into a waiting state.
+
+
+## Parallel Streams
+### forEach()
+- Remember that parallel opperations still occur on a forEach for parallel streams. 
+ - This is important for when the opperations in which the threads are operating are not thread safe. 
