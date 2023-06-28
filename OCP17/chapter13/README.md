@@ -13,3 +13,9 @@
   - Note: That scheduleAtFixedRate() doesn't necessarily guarantee this either as discussed that a task could take longer than the time alloted between tasks, thereby skewing the next start time. 
 ### Synchronized Blocks 
 To synchronize access across mutlpile threads, each thread much have access to the same Object. If each thread synchronizes on different objects, the code is not thread-safe.
+
+## Callable interface 
+- Must implement the call() method.
+
+## Runnable interface 
+- Must implement the run() method.
