@@ -20,3 +20,18 @@ And following from that, since both inner classes are really just part of the co
 - Must have private constructor.
 - Must have semicolon at the end of the enumerations. 
 - Strangely can reference the enumerations in the enum class itself. 
+
+## Sealed Classes
+### Rules
+- A sealed class permits which interfaces and classes may extend/implement the class. 
+- All permited classes must extend the class at compile time. 
+- Classes that extend the class must be marked sealed (with permits), final, or non-sealed. 
+
+### Delcaration 
+- acess_modifier seal_type class/interface class_name optional_permits { } 
+  - Example: 
+  ```
+     public sealed Frog permits BullFrog {}
+     public final class BullFrog extends Frog {}
+  ```   
+    
