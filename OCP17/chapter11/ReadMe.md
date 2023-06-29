@@ -11,3 +11,7 @@ For example a function that does not throw a IOException can not catch one.
 ## Exception Class 
 - The exception class has multiple constructors, one that takes a string, a Throwable, and no-args.
 
+# Localization 
+
+## Using Defaults 
+- If the requested Locale doesn't have a properties file, the system default is used.
