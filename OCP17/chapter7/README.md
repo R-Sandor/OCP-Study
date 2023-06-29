@@ -26,6 +26,8 @@ And following from that, since both inner classes are really just part of the co
 - A sealed class permits which interfaces and classes may extend/implement the class. 
 - All permited classes must extend the class at compile time. 
 - Classes that extend the class must be marked sealed (with permits), final, or non-sealed. 
+#### In the same class
+- Sealed class my omit listing the classes that extend it if the extenders are in the same class file. However, those classes must declare, final, non-sealed, or permits. 
 
 ### Delcaration 
 - acess_modifier seal_type class/interface class_name optional_permits { } 
