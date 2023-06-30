@@ -7,5 +7,5 @@
 ![properties](../assets/ServiceDiagram.png)
 
 ## Commandline options required
-![commandline options](../assests/commandline.png)
+![commandline options](../assets/commandline.png)
 
