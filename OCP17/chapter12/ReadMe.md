@@ -6,5 +6,6 @@
 ## Services 
 ![properties](../assets/ServiceDiagram.png)
 
-
+## Commandline options required
+![commandline options](../assests/commandline.png)
 
