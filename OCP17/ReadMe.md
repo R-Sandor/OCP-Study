@@ -1,4 +1,4 @@
-# PASSED 72% [OCP Badge](../assets/OCPJSE17.jpg)
+# PASSED 72% ![OCP Badge](./assets/OCPJSE17.jpg)
 
 
 # Exam Notes & Advice 
